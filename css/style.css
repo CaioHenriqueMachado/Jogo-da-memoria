@@ -22,7 +22,7 @@ div.container{
 
 div.box {
   background-color: aqua;
-  width: 700px;
+  width: 450px;
   height: 500px;
   border-radius: 10px;
   border: 3px solid black;
@@ -35,7 +35,7 @@ div ul {
   height: 100%;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   list-style: none;
 }
@@ -46,6 +46,14 @@ li {
   border: 3px solid black;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
+.ver {
+  background-color: whitesmoke;
+}
+
+.certo {
+  background-color: whitesmoke;
+}
 
