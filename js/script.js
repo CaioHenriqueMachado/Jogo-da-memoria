@@ -4,18 +4,21 @@ var chave = [];
 // console.log(randomArray.indexOf(7));
 var clock = true;
 var views = 0;
+var clicks = [-1]
 
 function logic(number){
-  if (views <= 1) {
+  if (!register(number)){
+    return false;
+  }
+
+  if (views <= 1 ) {
     showCard(number);
     clock ? clock = false : clock = true;
     chave.push(number);
   }
 
-  
   if(clock && views <= 1) {
     views+=1;
-    console.log(chave);
     loading = setTimeout(() => {
       hiddenCard(chave)
       chave = [];
@@ -28,13 +31,21 @@ function logic(number){
   
 }
 
+function register(card) {
+  if (clicks[clicks.length -1] == card) {
+    return false;
+  }else {
+    clicks.push(card);
+    return true;
+  }
+}
+
 function showCard(number){
   var card = document.getElementById(number);
-  card.classList.toggle('ver');
+  card.classList.add('ver');
 }
 
 function hiddenCard(chave){
-  console.log("?");
   chave.map( id =>{
     var card = document.getElementById(id);
     card.classList.remove('ver');
