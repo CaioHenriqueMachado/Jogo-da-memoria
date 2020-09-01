@@ -1,10 +1,15 @@
+// Tentar ver se as cores pegaram e estão em par
+
 var randomArray = randomCards(16);
+applyImage(randomArray);
 var chave = [];
-// console.log(randomArray);
-// console.log(randomArray.indexOf(7));
 var clock = true;
 var views = 0;
-var clicks = [-1]
+var clicks = [-1];
+
+console.log(randomArray);
+// console.log(randomArray.indexOf(7));
+
 
 function logic(number){
   if (!register(number)){
@@ -68,8 +73,19 @@ function randomCards(number){
     array.splice(x,1);
     final--;
   }
-
   return newArray;
+}
+
+function applyImage(array){
+  var cards = document.getElementsByTagName("li");
+  
+
+  for (i=0; i > cards.length; i++) {
+    cards[i].classList.add('a'+ array[i]);
+    cards[i].classList.add('ver');
+  }
+
+  console.log(cards);
 }
 
 function getRandomInt(min, max) {
