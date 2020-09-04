@@ -10,7 +10,6 @@ var acerts = [];
 
 function logic(number){
   if (!register(number)){
-    // console.log('vem?s')
     return;
   }
   
@@ -23,7 +22,7 @@ function logic(number){
   if(clock && views <= 1) {
     views+=1;
     setTimeout(() => {
-      validateCard(chave)
+      assertCard(chave)
       chave = [];
       views = 0;
     },500);
@@ -34,15 +33,11 @@ function logic(number){
   
 }
 
+
 function register(card) {
-  console.log(acerts);
-  acerts.map( id => {
-    if (card == id){
-      
-      // console.log('CAIU' +'card:'+card+ ' id:'+ id );
+  if (acerts.indexOf(card) != -1){
       return false;
-    }
-  });
+  }
 
   if (clicks[clicks.length -1] == card) {
     return false;
@@ -59,7 +54,7 @@ function showCard(number){
   card.classList.add('ver');
 }
 
-function validateCard(chave){
+function assertCard(chave){
   var i = chave[0];
   var j = chave[1];
   if (randomArray[i] == randomArray[j]){
@@ -104,3 +99,7 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+var tc = [1,2,3,4,5]
+
+console.log(tc.indexOf(7));
