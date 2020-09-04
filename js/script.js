@@ -6,7 +6,6 @@ var clock = true;
 var views = 0;
 var clicks = [-1];
 var acerts = [];
-// console.log(randomArray.indexOf(7));
 
 function logic(number){
   if (!register(number)){
@@ -30,13 +29,11 @@ function logic(number){
   } else {
     views+=1;
   }
-  
 }
-
 
 function register(card) {
   if (acerts.indexOf(card) != -1){
-      return false;
+    return false;
   }
 
   if (clicks[clicks.length -1] == card) {
@@ -45,8 +42,6 @@ function register(card) {
     clicks.push(card);
     return true;
   }
-
-
 }
 
 function showCard(number){
@@ -66,7 +61,6 @@ function assertCard(chave){
       card.classList.remove('ver');
     });
   }
-
 }
 
 function randomCards(number){
@@ -99,7 +93,3 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
-var tc = [1,2,3,4,5]
-
-console.log(tc.indexOf(7));

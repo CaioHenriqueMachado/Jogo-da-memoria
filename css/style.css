@@ -49,26 +49,20 @@ li {
   cursor: pointer;
 }
 
-
-
-/* .certo {
-  background-color: whitesmoke;
-} */
-
 .a0.ver {
   background-color:steelblue ;
 }
 
 .a1.ver {
-  background-color:teal ;
+  background-color:white ;
 }
 
 .a2.ver {
-  background-color:tomato ;
+  background-color:red ;
 }
 
 .a3.ver {
-  background-color:turquoise ;
+  background-color:black ;
 }
 
 .a4.ver {
@@ -76,7 +70,7 @@ li {
 }
 
 .a5.ver {
-  background-color:wheat ;
+  background-color:saddlebrown ;
 }
 
 .a6.ver {
@@ -84,7 +78,7 @@ li {
 }
 
 .a7.ver {
-  background-color:yellowgreen ;
+  background-color:green ;
 }
 
 
