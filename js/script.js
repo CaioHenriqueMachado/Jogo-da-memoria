@@ -1,21 +1,19 @@
-// Tentar ver se as cores pegaram e estão em par
-
 var randomArray = randomCards(16);
 applyImage(randomArray);
+
 var chave = [];
 var clock = true;
 var views = 0;
 var clicks = [-1];
-
-console.log(randomArray);
+var acerts = [];
 // console.log(randomArray.indexOf(7));
-
 
 function logic(number){
   if (!register(number)){
-    return false;
+    // console.log('vem?s')
+    return;
   }
-
+  
   if (views <= 1 ) {
     showCard(number);
     clock ? clock = false : clock = true;
@@ -24,12 +22,12 @@ function logic(number){
 
   if(clock && views <= 1) {
     views+=1;
-    loading = setTimeout(() => {
-      hiddenCard(chave)
+    setTimeout(() => {
+      validateCard(chave)
       chave = [];
       views = 0;
-    },1000);
-    
+    },500);
+
   } else {
     views+=1;
   }
@@ -37,12 +35,23 @@ function logic(number){
 }
 
 function register(card) {
+  console.log(acerts);
+  acerts.map( id => {
+    if (card == id){
+      
+      // console.log('CAIU' +'card:'+card+ ' id:'+ id );
+      return false;
+    }
+  });
+
   if (clicks[clicks.length -1] == card) {
     return false;
   }else {
     clicks.push(card);
     return true;
   }
+
+
 }
 
 function showCard(number){
@@ -50,12 +59,19 @@ function showCard(number){
   card.classList.add('ver');
 }
 
-function hiddenCard(chave){
-  chave.map( id =>{
-    var card = document.getElementById(id);
-    card.classList.remove('ver');
-  });
-  
+function validateCard(chave){
+  var i = chave[0];
+  var j = chave[1];
+  if (randomArray[i] == randomArray[j]){
+    acerts.push(i);
+    acerts.push(j);
+  }else{
+    chave.map( id =>{
+      var card = document.getElementById(id);
+      card.classList.remove('ver');
+    });
+  }
+
 }
 
 function randomCards(number){
@@ -78,14 +94,9 @@ function randomCards(number){
 
 function applyImage(array){
   var cards = document.getElementsByTagName("li");
-  
-
-  for (i=0; i > cards.length; i++) {
+  for (i=0; i < cards.length; i++) {
     cards[i].classList.add('a'+ array[i]);
-    cards[i].classList.add('ver');
   }
-
-  console.log(cards);
 }
 
 function getRandomInt(min, max) {
