@@ -1,3 +1,4 @@
+var timer = document.getElementById("timer");
 var randomArray = randomCards(16);
 applyImage(randomArray);
 
@@ -55,6 +56,9 @@ function assertCard(chave){
   if (randomArray[i] == randomArray[j]){
     acerts.push(i);
     acerts.push(j);
+    if (acerts.length == 16){
+      clearInterval(loading);
+    }
   }else{
     chave.map( id =>{
       var card = document.getElementById(id);
@@ -92,4 +96,14 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var loading = setInterval( () => {start()}, 1000);
+
+var sec = 0;
+var min = 0;
+function start(){
+  sec++;
+  timer.innerText = sec + ' secs';
+  min
 }
