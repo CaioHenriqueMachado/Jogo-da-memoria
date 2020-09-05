@@ -24,11 +24,7 @@
 </div>
 <img src="./img/line.png" alt="line" width="100%">
 <br>
-<div align="center">
-  <img src="./img/imgWeb2.png" alt="Web Version" height="400" width="100%">
-</div>
-<img src="./img/line.png" alt="line" width="100%">
-<br>
+
 
 <br>
   <h2 align="center">FEATURES :book:</h2>
