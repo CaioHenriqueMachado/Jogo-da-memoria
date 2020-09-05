@@ -1,9 +1,5 @@
 <h1 align="center">Jogo da memória</h1>
 
-<div align="center">
-  <img src="./img/wll.svg" alt="Logo" height="150" width="150">
-</div>
-
 <h2 align="center">O clássico jogo da memória versão web e mobile</h2>
 
 <p align="center"><strong><a href="https://caiohenriquemachado.github.io/Jogo-da-memoria/">ACESSAR SITE</a></strong></p>
